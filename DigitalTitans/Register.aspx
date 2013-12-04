@@ -16,13 +16,13 @@
         <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink>
     
         <p class="logo">Digital Titans</p>
-            <center>
-            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server">
-                <WizardSteps>
-                    <asp:CreateUserWizardStep runat="server" />
-                    <asp:CompleteWizardStep runat="server" />
-                </WizardSteps>
-            </asp:CreateUserWizard>
+        <center>
+                <asp:TextBox ID="user" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="pass" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="sq" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="sa" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="em" runat="server"></asp:TextBox><br />
+                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"></asp:Button>
         </center>
     </div>
 
