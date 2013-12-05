@@ -11,7 +11,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //SqlDataSource asdf = new SqlDataSource("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI", "SELECT * FROM n00728069_KrishnaGlick_Users;");
+            if (Session["Token"] == null)
+                Session["Token"] = false;
         }
     }
 }

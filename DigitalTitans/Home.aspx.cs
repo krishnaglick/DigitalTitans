@@ -11,7 +11,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Token"] == null)
+                Session["Token"] = false;
         }
 
 /*        protected void Button1_Click(object sender, EventArgs e)

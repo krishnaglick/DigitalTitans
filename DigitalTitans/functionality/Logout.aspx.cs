@@ -11,7 +11,9 @@ namespace WebApplication1.functionality
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Token"] = "false";
+            Session["Token"] = false;
+            Session["Username"] = "";
+            Session["Password"] = "";
             Response.Redirect("~/Home.aspx");
         }
     }

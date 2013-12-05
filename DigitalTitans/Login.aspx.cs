@@ -12,51 +12,60 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Token"] == null)
+                Session["Token"] = false;
+            if ((bool)Session["Token"] == true)
+                Response.Redirect("~/functionality/SR.aspx.");
+            if (Session["Login"] != null)
+            {
+                if ((bool)Session["Login"] == true)
+                {
+                    Response.Write("<script>alert('You need to login before using the application.');</script>");
+                    Session["Login"] = false;
+                }
+            }
         }
 
-        protected void loginBox_Authenticate(object sender, AuthenticateEventArgs e)
+        protected void Login_Click(object sender, EventArgs e)
         {
-            SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
-            SqlCommand cmd = new SqlCommand("userLogin", myConnection);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            if (TextBoxUsername.Text == "" && TextBoxPassword.Text == "")
+            {
+                Response.Write("<script>alert('Please enter a username and password!');</script>");
+                return;
+            }
 
-            cmd.Parameters.AddWithValue("@Username", loginBox.UserName);
-            cmd.Parameters.AddWithValue("@Password", loginBox.Password);
-
-            myConnection.Open();
-
-            int success = cmd.ExecuteNonQuery();
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
             try
             {
                 SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
-                SqlCommand cmd = new SqlCommand("userLogin", myConnection);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Username = @Username AND Password = @Password", myConnection);
 
-                cmd.Parameters.AddWithValue("@Username", TextBox1.Text);
-                cmd.Parameters.AddWithValue("@Password", TextBox2.Text);
+                cmd.Parameters.AddWithValue("@Username", TextBoxUsername.Text);
+                cmd.Parameters.AddWithValue("@Password", TextBoxPassword.Text);
 
                 myConnection.Open();
-
                 SqlDataReader rdr = cmd.ExecuteReader();
 
                 if (rdr.Read())
                 {
-                    Session["Token"] = "true";
-                    Response.Redirect("~/Home.aspx");
+                    Session["Token"] = true;
+                    Session["Username"] = TextBoxUsername.Text;
+                    Session["Password"] = TextBoxPassword.Text;
+                    Response.Redirect("~/functionality/SR.aspx");
                 }
                 else
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Login Failed!');", true);
+                    Response.Write("<script>alert('Invalid Username or Password!');</script>");
 
                 myConnection.Close();
             }
             catch
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Database Error!');", true);
+                Response.Write("<script>alert('Database Error!');</script>");
             }
+        }
+
+        protected void Register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Register.aspx");
         }
     }
 }

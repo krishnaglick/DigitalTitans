@@ -15,26 +15,38 @@
     
         <p class="logo">Digital Titans</p>
     </div>
-        <asp:DataList ID="DataList1" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Both">
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <ItemStyle BackColor="White" />
-            <ItemTemplate>
-                Skill_Name:
-                <asp:Label ID="Skill_NameLabel" runat="server" Text='<%# Eval("Skill_Name") %>' />
-                <br />
-                Personal_Rating:
-                <asp:Label ID="Personal_RatingLabel" runat="server" Text='<%# Eval("Personal_Rating") %>' />
-                <br />
-                Manager_Rating:
-                <asp:Label ID="Manager_RatingLabel" runat="server" Text='<%# Eval("Manager_Rating") %>' />
-                <br />
-<br />
-            </ItemTemplate>
-            <SelectedItemStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-        </asp:DataList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DigitalTitansConnectionString %>" SelectCommand="SELECT [Skill_Name], [Personal_Rating], [Manager_Rating] FROM [Skills]"></asp:SqlDataSource>
-        <br />
+        <center>
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+            </asp:GridView>
+            <asp:Button ID="ButtonSkillRateFunTimes" runat="server" Text="Edit Skill Rating" OnClick="ButtonSkillRateFunTimes_Click" /><asp:Button ID="ButtonSkillAddFunTimes" runat="server" Text="Add New Skill" OnClick="ButtonSkillAddFunTimes_Click" />
+            <br />
+            <asp:Label ID="LabelNewSkillName" runat="server" Text="Skill Name" Visible="False"></asp:Label><br />
+            <asp:TextBox ID="TextBoxNewSkillName" runat="server" Visible="False" MaxLength="20"></asp:TextBox><br />
+            <asp:Label ID="LabelNewSkillDescription" runat="server" Text="Skill Description" Visible="False"></asp:Label><br />
+            <asp:TextBox ID="TextBoxNewSkillDescription" runat="server" Visible="False" MaxLength="100"></asp:TextBox><br />
+            <asp:Label ID="LabelChooseSkillToRate" runat="server" Text="Choose Skill To Rate" Visible="False"></asp:Label><br />
+            <asp:ListBox ID="ListBoxEditingSkillList" runat="server" Height="21px" Visible="False"></asp:ListBox><br />
+            <asp:Label ID="LabelSkillRating" runat="server" Text="Skill Rating" Visible="False"></asp:Label>
+            <asp:RadioButtonList ID="RadioButtonListRatingOptions" runat="server" Enabled="True" RepeatDirection="Horizontal" AutoPostBack="True" Height="16px" Width="162px" Visible="False" OnSelectedIndexChanged="RadioButtonListRatingOptions_SelectedIndexChanged">
+            <asp:ListItem>1</asp:ListItem>
+            <asp:ListItem>2</asp:ListItem>
+            <asp:ListItem>3</asp:ListItem>
+            <asp:ListItem>4</asp:ListItem>
+            <asp:ListItem Value="5"></asp:ListItem>
+            </asp:RadioButtonList>
+        </center>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" SelectCommand=""></asp:SqlDataSource>
     </form>
 </body>
 </html>

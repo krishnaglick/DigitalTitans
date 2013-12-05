@@ -12,36 +12,11 @@ namespace WebApplication1.functionality
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
-        {
-            try
+            if (Session["Token"] == null)
+                Session["Token"] = false;
+            if ((Boolean)Session["Token"] == true)
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
-                myConnection.Open();
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Connection Open!');", true);
-                SqlCommand cmd = new SqlCommand("newMembers", myConnection);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@UserName", CreateUserWizard1.UserName);
-                cmd.Parameters.AddWithValue("@Pass", CreateUserWizard1.Password);
-                cmd.Parameters.AddWithValue("@EmailAddress", CreateUserWizard1.Email);
-                cmd.Parameters.AddWithValue("@SecurityQ", CreateUserWizard1.Question);
-                cmd.Parameters.AddWithValue("@SecurityA", CreateUserWizard1.Answer);
-
-                int temp = cmd.ExecuteNonQuery();
-
-                if(temp == 0)
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Register Failed! Username in use!');", true);
-                else
-                    Response.Redirect("~/functionality/SR.aspx");
-                myConnection.Close();
-            }
-            catch
-            {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Login Failed!');", true);
+                Response.Redirect("~/functionality/SR.aspx");
             }
         }
 
@@ -51,7 +26,6 @@ namespace WebApplication1.functionality
             {
                 SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
                 myConnection.Open();
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Connection Open!');", true);
                 SqlCommand cmd = new SqlCommand("newMembers", myConnection);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -61,17 +35,18 @@ namespace WebApplication1.functionality
                 cmd.Parameters.AddWithValue("@SecurityQ", sq.Text);
                 cmd.Parameters.AddWithValue("@SecurityA", sa.Text);
 
-                int temp = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-                if (temp == 0)
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Register Failed! Username in use!');", true);
-                else
-                    Response.Redirect("~/functionality/SR.aspx");
+                Session["Token"] = true;
+                Session["Username"] = user.Text;
+                Session["Password"] = pass.Text;
+                Response.Redirect("~/functionality/SR.aspx");
+
                 myConnection.Close();
             }
             catch
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "ErrorAlert", "alert('Login Failed!');", true);
+                Response.Write("<script>alert('Sorry, that username is taken.');</script>");
             }
         }
     }  

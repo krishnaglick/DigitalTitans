@@ -11,6 +11,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Token"] == null)
+                Session["Token"] = false;
             /*TextBox2Name.Text = Session["Name"].ToString();
             TextBox2Email.Text = Session["Email"].ToString();
             TextBox2Phone.Text = Session["Phone"].ToString();

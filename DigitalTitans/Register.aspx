@@ -17,12 +17,12 @@
     
         <p class="logo">Digital Titans</p>
         <center>
-                <asp:TextBox ID="user" runat="server"></asp:TextBox><br />
-                <asp:TextBox ID="pass" runat="server"></asp:TextBox><br />
-                <asp:TextBox ID="sq" runat="server"></asp:TextBox><br />
-                <asp:TextBox ID="sa" runat="server"></asp:TextBox><br />
-                <asp:TextBox ID="em" runat="server"></asp:TextBox><br />
-                <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"></asp:Button>
+            <asp:Label ID="Label1" runat="server" Text="Username "></asp:Label><asp:TextBox ID="user" runat="server"></asp:TextBox><br />
+            <asp:Label ID="Label2" runat="server" Text="Password "></asp:Label><asp:TextBox ID="pass" runat="server"></asp:TextBox><br />
+            <asp:Label ID="Label3" runat="server" Text="Security Question "></asp:Label><asp:TextBox ID="sq" runat="server"></asp:TextBox><br />
+            <asp:Label ID="Label4" runat="server" Text="Security Answer "></asp:Label><asp:TextBox ID="sa" runat="server"></asp:TextBox><br />
+            <asp:Label ID="Label5" runat="server" Text="Email "></asp:Label><asp:TextBox ID="em" runat="server"></asp:TextBox><br />
+            <asp:Button ID="Button1" runat="server" Text="Register" OnClick="Button1_Click"></asp:Button>
         </center>
     </div>
 
