@@ -121,13 +121,13 @@ namespace WebApplication1.functionality {
         protected global::System.Web.UI.WebControls.Label LabelChooseSkillToRate;
         
         /// <summary>
-        /// ListBoxEditingSkillList control.
+        /// DropDownListEditingSkillList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBoxEditingSkillList;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEditingSkillList;
         
         /// <summary>
         /// LabelSkillRating control.

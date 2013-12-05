@@ -36,7 +36,8 @@
             <asp:Label ID="LabelNewSkillDescription" runat="server" Text="Skill Description" Visible="False"></asp:Label><br />
             <asp:TextBox ID="TextBoxNewSkillDescription" runat="server" Visible="False" MaxLength="100"></asp:TextBox><br />
             <asp:Label ID="LabelChooseSkillToRate" runat="server" Text="Choose Skill To Rate" Visible="False"></asp:Label><br />
-            <asp:ListBox ID="ListBoxEditingSkillList" runat="server" Height="21px" Visible="False"></asp:ListBox><br />
+            <asp:DropDownList ID="DropDownListEditingSkillList" runat="server" Visible="false"></asp:DropDownList>
+            <br />
             <asp:Label ID="LabelSkillRating" runat="server" Text="Skill Rating" Visible="False"></asp:Label>
             <asp:RadioButtonList ID="RadioButtonListRatingOptions" runat="server" Enabled="True" RepeatDirection="Horizontal" AutoPostBack="True" Height="16px" Width="162px" Visible="False" OnSelectedIndexChanged="RadioButtonListRatingOptions_SelectedIndexChanged">
             <asp:ListItem>1</asp:ListItem>

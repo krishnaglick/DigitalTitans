@@ -28,12 +28,14 @@ namespace WebApplication1.functionality
             ButtonSkillRateFunTimes.Visible = false;
             ButtonSkillAddFunTimes.Visible = false;
             GridView1.Visible = false;
-            ListBoxEditingSkillList.Visible = true;
             LabelChooseSkillToRate.Visible = true;
             RadioButtonListRatingOptions.Visible = true;
             LabelSkillRating.Visible = true;
-            ListBoxEditingSkillList.Items.Clear();
-            ListBoxEditingSkillList.ClearSelection();
+
+            DropDownListEditingSkillList.Visible = true;
+            DropDownListEditingSkillList.Items.Clear();
+            DropDownListEditingSkillList.ClearSelection();
+
             try
             {
                 SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
@@ -46,7 +48,7 @@ namespace WebApplication1.functionality
 
                 while(rdr.Read())
                 {
-                    ListBoxEditingSkillList.Items.Add(rdr.GetValue(0).ToString());
+                    DropDownListEditingSkillList.Items.Add(rdr.GetValue(0).ToString());
                 }
 
                 myConnection.Close();
@@ -67,14 +69,13 @@ namespace WebApplication1.functionality
             LabelSkillRating.Visible = true;
             TextBoxNewSkillDescription.Visible = true;
             TextBoxNewSkillName.Visible = true;
-            RadioButtonListRatingOptions.Visible = true;
         }
 
         protected void RadioButtonListRatingOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListBoxEditingSkillList.Visible == true)
+            if (DropDownListEditingSkillList.Visible == true)
             {
-                if (ListBoxEditingSkillList.SelectedIndex < 0)
+                if (DropDownListEditingSkillList.SelectedIndex < 0)
                 {
                     RadioButtonListRatingOptions.ClearSelection();
                     Response.Write("<script>alert('Please choose a skill!');</script>");
@@ -87,7 +88,7 @@ namespace WebApplication1.functionality
                     SqlCommand cmd = new SqlCommand("UPDATE Skills SET UserRating = @Rating WHERE SkillName = @Skillname AND Username = @Username", myConnection);
 
                     cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
-                    cmd.Parameters.AddWithValue("@Skillname", ListBoxEditingSkillList.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Skillname", DropDownListEditingSkillList.SelectedValue);
                     cmd.Parameters.AddWithValue("@Rating", Convert.ToInt32(RadioButtonListRatingOptions.SelectedValue));
 
                     cmd.ExecuteNonQuery();
@@ -132,10 +133,14 @@ namespace WebApplication1.functionality
             TextBoxNewSkillDescription.Visible = false;
             TextBoxNewSkillName.Visible = false;
 
-            ListBoxEditingSkillList.Visible = false;
+            DropDownListEditingSkillList.Visible = false;
+            RadioButtonListRatingOptions.Visible = false;
+
             RadioButtonListRatingOptions.Visible = false;
             LabelChooseSkillToRate.Visible = false;
             LabelSkillRating.Visible = false;
+
+
             ButtonSkillRateFunTimes.Visible = true;
             GridView1.Visible = true;
             ButtonSkillAddFunTimes.Visible = true;
