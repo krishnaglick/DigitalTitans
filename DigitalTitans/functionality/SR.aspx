@@ -16,7 +16,6 @@
         <p class="logo">Digital Titans</p>
     </div>
         <asp:DropDownList ID="DropDownListEmployees" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceEmployees" DataTextField="Username" DataValueField="Username" AppendDataBoundItems="true" OnSelectedIndexChanged="DropDownListEmployees_SelectedIndexChanged">
-            <asp:ListItem>Self</asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSourceEmployees" runat="server" ConnectionString="<%$ ConnectionStrings:DigitalTitansConnectionString %>" SelectCommand="SELECT [Username] FROM [Users] WHERE ([Manager] = @Manager)">
             <SelectParameters>
@@ -55,6 +54,7 @@
             <asp:ListItem Value="5"></asp:ListItem>
             </asp:RadioButtonList>
             <asp:Button ID="ButtonDeleteSkill" runat="server" Text="Delete" Visible="false" OnClick="ButtonDeleteSkill_Click"></asp:Button>
+            <asp:Button ID="ButtonCancel" runat="server" Text="Cancel" Visible="false" OnClick="ButtonCancel_Click" />
         </center>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" SelectCommand=""></asp:SqlDataSource>
     </form>

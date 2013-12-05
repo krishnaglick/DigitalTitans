@@ -8,15 +8,8 @@ using System.Data.SqlClient;
 
 namespace WebApplication1.functionality
 {
-
-    /*
-     * NOTES
-     * Password and other things are not updating. Fuck.
-    */
     public partial class Settings : System.Web.UI.Page
     {
-        int mode = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Token"] == null)
@@ -26,10 +19,14 @@ namespace WebApplication1.functionality
                 Session["Login"] = true;
                 Response.Redirect("~/Login.aspx");
             }
+            ButtonCancel_Click(null, null);
         }
 
         private void ShowThings()
         {
+            TextBoxData1.Text = "";
+            TextBoxData2.Text = "";
+            TextBoxData3.Text = "";
             LabelData1.Visible = true;
             LabelData2.Visible = true;
             LabelData3.Visible = true;
@@ -45,8 +42,9 @@ namespace WebApplication1.functionality
             LabelData1.Text = "Enter Old Password";
             LabelData2.Text = "Enter New Password";
             LabelData3.Text = "Reenter New Password";
+            TextBoxData2.TextMode = System.Web.UI.WebControls.TextBoxMode.Password;
+            TextBoxData3.TextMode = System.Web.UI.WebControls.TextBoxMode.Password;
             ShowThings();
-            mode = 1;
         }
 
         protected void ButtonChangeEmail_Click(object sender, EventArgs e)
@@ -55,7 +53,6 @@ namespace WebApplication1.functionality
             LabelData2.Text = "Enter New Email";
             LabelData3.Text = "Reenter New Email";
             ShowThings();
-            mode = 2;
         }
 
         protected void ButtonChangeQA_Click(object sender, EventArgs e)
@@ -63,8 +60,8 @@ namespace WebApplication1.functionality
             LabelData1.Text = "Enter Password";
             LabelData2.Text = "Enter New Security Question";
             LabelData3.Text = "Enter New Security Answer";
+            TextBoxData3.TextMode = System.Web.UI.WebControls.TextBoxMode.Password;
             ShowThings();
-            mode = 3;
         }
 
         protected void ButtonAccept_Click(object sender, EventArgs e)
@@ -192,6 +189,8 @@ namespace WebApplication1.functionality
             TextBoxData1.Text = "";
             TextBoxData2.Text = "";
             TextBoxData3.Text = "";
+            TextBoxData2.TextMode = System.Web.UI.WebControls.TextBoxMode.SingleLine;
+            TextBoxData3.TextMode = System.Web.UI.WebControls.TextBoxMode.SingleLine;
         }
     }
 }
