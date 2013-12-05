@@ -29,7 +29,7 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-            <asp:Button ID="ButtonSkillRateFunTimes" runat="server" Text="Edit Skill Rating" OnClick="ButtonSkillRateFunTimes_Click" /><asp:Button ID="ButtonSkillAddFunTimes" runat="server" Text="Add New Skill" OnClick="ButtonSkillAddFunTimes_Click" />
+            <asp:Button ID="ButtonSkillAddFunTimes" runat="server" Text="Add New Skill" OnClick="ButtonSkillAddFunTimes_Click" /><asp:Button ID="ButtonSkillRateFunTimes" runat="server" Text="Edit Skill Rating" OnClick="ButtonSkillRateFunTimes_Click" /><asp:Button ID="ButtonPickSkillDelete" runat="server" Text="Delete Skill" Height="26px" OnClick="ButtonPickSkillDelete_Click"></asp:Button>
             <br />
             <asp:Label ID="LabelNewSkillName" runat="server" Text="Skill Name" Visible="False"></asp:Label><br />
             <asp:TextBox ID="TextBoxNewSkillName" runat="server" Visible="False" MaxLength="20"></asp:TextBox><br />
@@ -46,6 +46,7 @@
             <asp:ListItem>4</asp:ListItem>
             <asp:ListItem Value="5"></asp:ListItem>
             </asp:RadioButtonList>
+            <asp:Button ID="ButtonDeleteSkill" runat="server" Text="Delete" Visible="false" OnClick="ButtonDeleteSkill_Click"></asp:Button>
         </center>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" SelectCommand=""></asp:SqlDataSource>
     </form>

@@ -58,6 +58,15 @@ namespace WebApplication1.functionality {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
+        /// ButtonSkillAddFunTimes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonSkillAddFunTimes;
+        
+        /// <summary>
         /// ButtonSkillRateFunTimes control.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace WebApplication1.functionality {
         protected global::System.Web.UI.WebControls.Button ButtonSkillRateFunTimes;
         
         /// <summary>
-        /// ButtonSkillAddFunTimes control.
+        /// ButtonPickSkillDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSkillAddFunTimes;
+        protected global::System.Web.UI.WebControls.Button ButtonPickSkillDelete;
         
         /// <summary>
         /// LabelNewSkillName control.
@@ -146,6 +155,15 @@ namespace WebApplication1.functionality {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListRatingOptions;
+        
+        /// <summary>
+        /// ButtonDeleteSkill control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonDeleteSkill;
         
         /// <summary>
         /// SqlDataSource1 control.

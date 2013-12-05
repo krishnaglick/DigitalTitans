@@ -26,11 +26,14 @@ namespace WebApplication1.functionality
         protected void ButtonSkillRateFunTimes_Click(object sender, EventArgs e)
         {
             ButtonSkillRateFunTimes.Visible = false;
+            ButtonPickSkillDelete.Visible = false;
             ButtonSkillAddFunTimes.Visible = false;
             GridView1.Visible = false;
             LabelChooseSkillToRate.Visible = true;
             RadioButtonListRatingOptions.Visible = true;
             LabelSkillRating.Visible = true;
+
+            LabelSkillRating.Text = "Choose Skill to Rate";
 
             DropDownListEditingSkillList.Visible = true;
             DropDownListEditingSkillList.Items.Clear();
@@ -57,11 +60,17 @@ namespace WebApplication1.functionality
             {
                 Response.Write("<script>alert('Database Error!');</script>");
             }
+            if (DropDownListEditingSkillList.Items.Count == 0)
+            {
+                Response.Write("<script>alert('You need to have a skill made, to alter its rating!');</script>");
+                HideExtraCrap();
+            }
         }
 
         protected void ButtonSkillAddFunTimes_Click(object sender, EventArgs e)
         {
             ButtonSkillRateFunTimes.Visible = false;
+            ButtonPickSkillDelete.Visible = false;
             ButtonSkillAddFunTimes.Visible = false;
             GridView1.Visible = false;
             LabelNewSkillDescription.Visible = true;
@@ -69,6 +78,34 @@ namespace WebApplication1.functionality
             LabelSkillRating.Visible = true;
             TextBoxNewSkillDescription.Visible = true;
             TextBoxNewSkillName.Visible = true;
+            RadioButtonListRatingOptions.Visible = true;
+        }
+
+        private void HideExtraCrap()
+        {
+            LabelNewSkillDescription.Visible = false;
+            LabelNewSkillName.Visible = false;
+            TextBoxNewSkillDescription.Visible = false;
+            TextBoxNewSkillName.Visible = false;
+
+            DropDownListEditingSkillList.Visible = false;
+            RadioButtonListRatingOptions.Visible = false;
+
+            RadioButtonListRatingOptions.Visible = false;
+            LabelChooseSkillToRate.Visible = false;
+            LabelSkillRating.Visible = false;
+            ButtonDeleteSkill.Visible = false;
+
+            ButtonSkillRateFunTimes.Visible = true;
+            GridView1.Visible = true;
+            ButtonSkillAddFunTimes.Visible = true;
+            ButtonPickSkillDelete.Visible = true;
+
+            TextBoxNewSkillDescription.Text = "";
+            TextBoxNewSkillName.Text = "";
+            RadioButtonListRatingOptions.ClearSelection();
+
+            GridView1.DataBind();
         }
 
         protected void RadioButtonListRatingOptions_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,28 +165,83 @@ namespace WebApplication1.functionality
                 }
             }
 
-            LabelNewSkillDescription.Visible = false;
-            LabelNewSkillName.Visible = false;
-            TextBoxNewSkillDescription.Visible = false;
-            TextBoxNewSkillName.Visible = false;
+            HideExtraCrap();
+        }
 
-            DropDownListEditingSkillList.Visible = false;
-            RadioButtonListRatingOptions.Visible = false;
+        protected void ButtonPickSkillDelete_Click(object sender, EventArgs e)
+        {
 
-            RadioButtonListRatingOptions.Visible = false;
-            LabelChooseSkillToRate.Visible = false;
-            LabelSkillRating.Visible = false;
+            if (DropDownListEditingSkillList.Items.Count == 0)
+            {
+                Response.Write("<script>alert('You have to have a skill to delete in the first place!');</script>");
+                HideExtraCrap();
+            }
 
+            ButtonSkillRateFunTimes.Visible = false;
+            ButtonSkillAddFunTimes.Visible = false;
+            ButtonPickSkillDelete.Visible = false;
+            GridView1.Visible = false;
+            LabelChooseSkillToRate.Visible = true;
+            ButtonDeleteSkill.Visible = true;
 
-            ButtonSkillRateFunTimes.Visible = true;
-            GridView1.Visible = true;
-            ButtonSkillAddFunTimes.Visible = true;
+            DropDownListEditingSkillList.Visible = true;
+            DropDownListEditingSkillList.Items.Clear();
+            DropDownListEditingSkillList.ClearSelection();
 
-            TextBoxNewSkillDescription.Text = "";
-            TextBoxNewSkillName.Text = "";
-            RadioButtonListRatingOptions.ClearSelection();
+            LabelSkillRating.Text = "Choose Skill to Delete";
 
-            GridView1.DataBind();
+            try
+            {
+                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlCommand cmd = new SqlCommand("SELECT SkillName FROM Skills WHERE Username = @Username", myConnection);
+
+                cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+
+                myConnection.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    DropDownListEditingSkillList.Items.Add(rdr.GetValue(0).ToString());
+                }
+
+                rdr.Close();
+
+                myConnection.Close();
+            }
+            catch
+            {
+                Response.Write("<script>alert('Database Error!');</script>");
+            }
+        }
+
+        protected void ButtonDeleteSkill_Click(object sender, EventArgs e)
+        {
+            if (DropDownListEditingSkillList.SelectedIndex < 0)
+            {
+                RadioButtonListRatingOptions.ClearSelection();
+                Response.Write("<script>alert('Please choose a skill!');</script>");
+                return;
+            }
+            try
+            {
+                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                myConnection.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM Skills WHERE SkillName = @Skillname AND Username = @Username", myConnection);
+
+                cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                cmd.Parameters.AddWithValue("@Skillname", DropDownListEditingSkillList.SelectedValue);
+
+                cmd.ExecuteNonQuery();
+
+                myConnection.Close();
+            }
+            catch
+            {
+                Response.Write("<script>alert('Unable to exterminate targeted je- I mean skill! Yeah, skill...');</script>");
+            }
+
+            HideExtraCrap();
         }
     }
 }
