@@ -20,7 +20,10 @@ namespace WebApplication1.functionality
                 Response.Redirect("~/Login.aspx");
             }
             SqlDataSource1.ConnectionString = "Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI";
-            SqlDataSource1.SelectCommand = "SELECT SkillName as [Skill Name], SkillDescription as [Skill Description], UserRating as [Personal Rating] FROM Skills WHERE Username = '" + Session["Username"].ToString() + "'";
+            SqlDataSource1.SelectCommand = "SELECT SkillName as [Skill Name], SkillDescription as [Skill Description], UserRating as [Personal Rating], ManagerRating as [Manager Rating] FROM Skills WHERE Username = '" + Session["Username"].ToString() + "'";
+            DropDownListEmployees.DataBind();
+            if (DropDownListEmployees.Items.Count < 2)
+                DropDownListEmployees.Visible = false;
         }
 
         protected void ButtonSkillRateFunTimes_Click(object sender, EventArgs e)
@@ -112,12 +115,6 @@ namespace WebApplication1.functionality
         {
             if (DropDownListEditingSkillList.Visible == true)
             {
-                if (DropDownListEditingSkillList.SelectedIndex < 0)
-                {
-                    RadioButtonListRatingOptions.ClearSelection();
-                    Response.Write("<script>alert('Please choose a skill!');</script>");
-                    return;
-                }
                 try
                 {
                     SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
@@ -170,13 +167,6 @@ namespace WebApplication1.functionality
 
         protected void ButtonPickSkillDelete_Click(object sender, EventArgs e)
         {
-
-            if (DropDownListEditingSkillList.Items.Count == 0)
-            {
-                Response.Write("<script>alert('You have to have a skill to delete in the first place!');</script>");
-                HideExtraCrap();
-            }
-
             ButtonSkillRateFunTimes.Visible = false;
             ButtonSkillAddFunTimes.Visible = false;
             ButtonPickSkillDelete.Visible = false;
@@ -213,16 +203,17 @@ namespace WebApplication1.functionality
             {
                 Response.Write("<script>alert('Database Error!');</script>");
             }
+
+            if (DropDownListEditingSkillList.Items.Count == 0)
+            {
+                Response.Write("<script>alert('You have to have a skill to delete in the first place!');</script>");
+                HideExtraCrap();
+                return;
+            }
         }
 
         protected void ButtonDeleteSkill_Click(object sender, EventArgs e)
         {
-            if (DropDownListEditingSkillList.SelectedIndex < 0)
-            {
-                RadioButtonListRatingOptions.ClearSelection();
-                Response.Write("<script>alert('Please choose a skill!');</script>");
-                return;
-            }
             try
             {
                 SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
@@ -242,6 +233,21 @@ namespace WebApplication1.functionality
             }
 
             HideExtraCrap();
+        }
+
+        protected void DropDownListEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropDownListEmployees.SelectedValue == "Self")
+            {
+                SqlDataSource1.SelectCommand = "SELECT SkillName as [Skill Name], SkillDescription as [Skill Description], UserRating as [Personal Rating], ManagerRating as [Manager Rating] FROM Skills WHERE Username = '" + Session["Username"].ToString() + "'";
+                GridView1.DataBind();
+            }
+            else
+            {
+                String targetUser = DropDownListEmployees.SelectedValue;
+                SqlDataSource1.SelectCommand = "SELECT SkillName as [Skill Name], SkillDescription as [Skill Description], UserRating as [Personal Rating], ManagerRating as [Manager Rating] FROM Skills WHERE Username = '" + targetUser + "'";
+                GridView1.DataBind();
+            }
         }
     }
 }
