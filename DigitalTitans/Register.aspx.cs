@@ -25,6 +25,29 @@ namespace WebApplication1.functionality
             try
             {
                 SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                if (mgr.Text != "")
+                {
+                    try
+                    {
+                        myConnection.Open();
+                        SqlCommand goodMgr = new SqlCommand("SELECT Username FROM Users WHERE Username = @Mgr", myConnection);
+
+                        goodMgr.Parameters.AddWithValue("@Mgr", mgr.Text);
+                        SqlDataReader rdr = goodMgr.ExecuteReader();
+
+                        if (!(rdr.Read()))
+                        {
+                            Response.Write("<script>alert('Incorrect manager username, please enter in a valid manager username.');</script>");
+                            return;
+                        }
+                        myConnection.Close();
+                    }
+                    catch
+                    {
+                        Response.Write("<script>alert('Bad Manager Username!');</script>");
+                    }
+
+                }
                 myConnection.Open();
                 SqlCommand cmd = new SqlCommand("newMembers", myConnection);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -34,6 +57,7 @@ namespace WebApplication1.functionality
                 cmd.Parameters.AddWithValue("@EmailAddress", em.Text);
                 cmd.Parameters.AddWithValue("@SecurityQ", sq.Text);
                 cmd.Parameters.AddWithValue("@SecurityA", sa.Text);
+                cmd.Parameters.AddWithValue("@MgrName", mgr.Text);
 
                 cmd.ExecuteNonQuery();
 

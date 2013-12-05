@@ -15,6 +15,14 @@
     
         <p class="logo">Digital Titans</p>
     </div>
+        <asp:DropDownList ID="DropDownListEmployees" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceEmployees" DataTextField="Username" DataValueField="Username" AppendDataBoundItems="true" OnSelectedIndexChanged="DropDownListEmployees_SelectedIndexChanged">
+            <asp:ListItem>Self</asp:ListItem>
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSourceEmployees" runat="server" ConnectionString="<%$ ConnectionStrings:DigitalTitansConnectionString %>" SelectCommand="SELECT [Username] FROM [Users] WHERE ([Manager] = @Manager)">
+            <SelectParameters>
+                <asp:SessionParameter Name="Manager" SessionField="Username" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         <center>
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
