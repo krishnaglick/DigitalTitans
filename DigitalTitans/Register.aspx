@@ -28,13 +28,18 @@
 
         <p class="logo">Digital Titans</p>
         <center>
-            <asp:Label ID="Label1" runat="server" Text="Username "></asp:Label><asp:TextBox ID="user" runat="server"></asp:TextBox><br />
-            <asp:Label ID="Label2" runat="server" Text="Password "></asp:Label><asp:TextBox ID="pass" runat="server" TextMode="Password"></asp:TextBox><br />
-            <asp:Label ID="Label3" runat="server" Text="Security Question "></asp:Label><asp:TextBox ID="sq" runat="server"></asp:TextBox><br />
-            <asp:Label ID="Label4" runat="server" Text="Security Answer "></asp:Label><asp:TextBox ID="sa" runat="server" TextMode="Password"></asp:TextBox><br />
-            <asp:Label ID="Label5" runat="server" Text="Email "></asp:Label><asp:TextBox ID="em" runat="server" TextMode="Email"></asp:TextBox><br />
-            <asp:Label ID="Label6" runat="server" Text="Manager Name "></asp:Label><asp:TextBox ID="mgr" runat="server"></asp:TextBox><br />
-            <asp:Button ID="Button1" runat="server" Text="Register" OnClick="Button1_Click"></asp:Button>
+            <asp:Table runat="server">
+                <asp:TableRow>
+                    <asp:TableCell><asp:Label ID="Label1" runat="server" Text="Username "></asp:Label></asp:TableCell>
+                    <asp:TableCell><asp:TextBox ID="user" runat="server"></asp:TextBox><br /></asp:TableCell>
+                </asp:TableRow>
+                <asp:Label ID="Label2" runat="server" Text="Password "></asp:Label><asp:TextBox ID="pass" runat="server" TextMode="Password"></asp:TextBox><br />
+                <asp:Label ID="Label3" runat="server" Text="Security Question "></asp:Label><asp:TextBox ID="sq" runat="server"></asp:TextBox><br />
+                <asp:Label ID="Label4" runat="server" Text="Security Answer "></asp:Label><asp:TextBox ID="sa" runat="server" TextMode="Password"></asp:TextBox><br />
+                <asp:Label ID="Label5" runat="server" Text="Email "></asp:Label><asp:TextBox ID="em" runat="server" TextMode="Email"></asp:TextBox><br />
+                <asp:Label ID="Label6" runat="server" Text="Manager Name "></asp:Label><asp:TextBox ID="mgr" runat="server"></asp:TextBox><br />
+                <asp:Button ID="Button1" runat="server" Text="Register" OnClick="Button1_Click"></asp:Button>
+            </asp:Table>
         </center>
     </div>
 
