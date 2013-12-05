@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebApplication1.WebForm2" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Why.aspx.cs" Inherits="WebApplication1.policies" %>
 
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="./Core.css" />
@@ -25,21 +25,13 @@
         <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">AboutUs</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink></li>
       </ul></div><br />
-        <p class="logo">Digital Titans</p>
-        <center>
-            <asp:Label ID="LabelUsername" runat="server" Text="Username:  "></asp:Label>
-            <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox><br />
-            <asp:Label ID="LabelPassword" runat="server" Text="Password:  "></asp:Label>
-            <asp:TextBox ID="TextBoxPassword" runat="server" EnableViewState="False" TextMode="password"></asp:TextBox><br />
-            <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="Login_Click"></asp:Button>
-            <asp:Button ID="ButtonRegister" runat="server" Text="Register" OnClick="Register_Click"></asp:Button>
-       </center>
+        <p class="logo">Digital Titans</p></div>
     
 
-        </div>
+        
         <div id="footer">
         <a href="Default.aspx" id="email">Home</a>
-            </div>
+            </div></div>
     </form>
 </body>
 </html>

@@ -10,7 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class Pricing {
+    public partial class policies {
         
         /// <summary>
         /// Head1 control.

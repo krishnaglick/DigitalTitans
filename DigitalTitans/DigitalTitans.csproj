@@ -63,10 +63,12 @@
     <Content Include="functionality\Settings.aspx" />
     <Content Include="functionality\SR.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="Policies.aspx" />
+    <Content Include="AboutUs.aspx" />
+    <Content Include="Why.aspx" />
     <Content Include="Pricing.aspx" />
-    <Content Include="Security.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
   </ItemGroup>
@@ -99,12 +101,19 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Policies.aspx.cs">
-      <DependentUpon>Policies.aspx</DependentUpon>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Policies.aspx.designer.cs">
-      <DependentUpon>Policies.aspx</DependentUpon>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Why.aspx.cs">
+      <DependentUpon>Why.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Why.aspx.designer.cs">
+      <DependentUpon>Why.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pricing.aspx.cs">
       <DependentUpon>Pricing.aspx</DependentUpon>
@@ -127,13 +136,6 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Security.aspx.cs">
-      <DependentUpon>Security.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Security.aspx.designer.cs">
-      <DependentUpon>Security.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

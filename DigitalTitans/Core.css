@@ -1,5 +1,111 @@
 body {
+    background-image:url('image001.png');
+}
+
+body {
+   background-color:white;
+}
+div {
+    border-radius:25px;
+    -moz-border-radius: 25px;
+}
+
+#selector {
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+
+#header {
+	z-index: 1;
+	position:relative;
+	width:675px;
+	margin-top: -25px;
+	height: 90px;
+	background-image: url('bg_header.png');
+	background-size: 100%;
+	margin-bottom:8px;
+    margin-left:auto;
+    margin-right:auto;
+    top: -21px;
+    left: 22px;
+    border: 1px  solid black;
+    box-shadow:5px 5px 5px 5px;
     
+   
+}
+	
+#mainpage{
+	width:800px;
+	height:780px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:-25px;
+	position: relative;
+	background-color:lightsalmon;
+	border: 2px solid black;
+	box-shadow:15px 15px 15px 15px;
+    top: 10px;
+    left: 0px;
+    background-image:url('marble_bg.png');
+
+}
+#footer {
+	width:600px;
+	height: 40px;
+    position: relative;
+   
+   
+	margin-bottom:20px;
+    margin-left:auto;
+    margin-right:auto;
+	top: 0px;
+    left: 5px;
+	clear: both;
+	padding-top: 20px;
+    font-family: Trebuchet MS;
+	font-size: 14px;
+	text-align: center;
+	color: whitesmoke;
+    box-shadow:black 10px 10px 10px 0px;
+    border: 2px solid black;
+	background-image: url('bg_footer.png');
+	background-size: 100%;
+}
+
+.right {
+	width: 600px;
+	height: 680px;
+    position: relative;
+    
+    margin-top: 25px;
+	margin-right:auto;
+    margin-left:auto;
+    margin-bottom:auto;
+	
+    text-align:center;
+    border:1px solid black;
+	box-shadow:5px 5px 5px 0px;
+	background-color:ghostwhite;
+	border-radius:8px;
+}
+#name {
+	float:right;
+	margin-right: 5px;
+	padding-top: 15px;
+	font-size: 26px;
+	font-family: Trebuchet MS;
+	color: whitesmoke;
+    height: 37px;
+}
+
+#email{
+	
+	margin-right: 5px;
+	padding-top: 5px;
+	font-size: 14px;
+	font-family: Trebuchet MS;
+	color: #ffffff;
 }
 a {
     font: bold 11px Arial;
@@ -17,8 +123,29 @@ p.logo {
     font-style: italic;
     font-family: 'Comic Sans MS';
 }
+
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+} 
+
+li
+{
+display:inline;
+float: left;
+}
+
+    li:hover {
+        text-decoration:underline;
+    }
+
 div.top {
+    margin-left:20px;
+    margin-right:20px;
     text-align: center;
+    margin-top:20px;
 }
 .login {
     margin-left:auto;

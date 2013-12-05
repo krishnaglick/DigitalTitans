@@ -10,7 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class Pricing {
+    public partial class WebForm3 {
         
         /// <summary>
         /// Head1 control.
