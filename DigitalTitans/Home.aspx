@@ -14,22 +14,22 @@
         <div id="mainpage">
     
         
-    
+            
             <div class="right">
-
                 <div class="top">
         <ul>
         <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Why.aspx">Why Digital Titans?</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Pricing.aspx">Pricing</asp:HyperLink></li>
-        <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">AboutUs</asp:HyperLink></li>
+        <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink></li>
-      </ul></div><br />
+      </ul></div>
     
 
         </div>
+                
         <div id="footer">
-        <a href="Default.aspx" id="email">Home</a>
+        Copyright 2013 Digital Titans.UNF
             </div></div>
     </form>
 </body>

@@ -22,24 +22,25 @@
         <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Why.aspx">Why Digital Titans?</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Pricing.aspx">Pricing</asp:HyperLink></li>
-        <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">AboutUs</asp:HyperLink></li>
+        <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink></li>
-      </ul></div><br />
+      </ul></div>
         <p class="logo">Digital Titans</p>
-        <center>
+        
             <asp:Label ID="LabelUsername" runat="server" Text="Username:  "></asp:Label>
-            <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox><br />
+            <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox><br /><br />
             <asp:Label ID="LabelPassword" runat="server" Text="Password:  "></asp:Label>
-            <asp:TextBox ID="TextBoxPassword" runat="server" EnableViewState="False" TextMode="password"></asp:TextBox><br />
+            <asp:TextBox ID="TextBoxPassword" runat="server" EnableViewState="False" TextMode="password"></asp:TextBox><br /><br />
             <asp:Button ID="ButtonLogin" runat="server" Text="Login" OnClick="Login_Click"></asp:Button>
             <asp:Button ID="ButtonRegister" runat="server" Text="Register" OnClick="Register_Click"></asp:Button>
-       </center>
+       
     
-
         </div>
         <div id="footer">
-        <a href="Default.aspx" id="email">Home</a>
+            Copyright 2013 Digital Titans.UNF
             </div>
     </form>
+    
+    
 </body>
 </html>
