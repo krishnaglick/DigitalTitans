@@ -21,7 +21,11 @@ namespace WebApplication1.functionality
             }
             SqlDataSource1.ConnectionString = "Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI";
             SqlDataSource1.SelectCommand = "SELECT SkillName as [Skill Name], SkillDescription as [Skill Description], UserRating as [Personal Rating], ManagerRating as [Manager Rating] FROM Skills WHERE Username = '" + Session["Username"].ToString() + "'";
+            int temp = DropDownListEmployees.SelectedIndex;
+            DropDownListEmployees.Items.Clear();
+            DropDownListEmployees.Items.Add("Self");
             DropDownListEmployees.DataBind();
+            DropDownListEmployees.SelectedIndex = temp;
             if (DropDownListEmployees.Items.Count < 2)
                 DropDownListEmployees.Visible = false;
         }
@@ -35,8 +39,9 @@ namespace WebApplication1.functionality
             LabelChooseSkillToRate.Visible = true;
             RadioButtonListRatingOptions.Visible = true;
             LabelSkillRating.Visible = true;
+            ButtonCancel.Visible = true;
 
-            LabelSkillRating.Text = "Choose Skill to Rate";
+            LabelChooseSkillToRate.Text = "Choose Skill to Rate";
 
             DropDownListEditingSkillList.Visible = true;
             DropDownListEditingSkillList.Items.Clear();
@@ -47,7 +52,10 @@ namespace WebApplication1.functionality
                 SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
                 SqlCommand cmd = new SqlCommand("SELECT SkillName FROM Skills WHERE Username = @Username", myConnection);
 
-                cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                if(DropDownListEmployees.SelectedValue == "Self")
+                    cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                else
+                    cmd.Parameters.AddWithValue("@Username", DropDownListEmployees.SelectedValue);
 
                 myConnection.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -82,6 +90,7 @@ namespace WebApplication1.functionality
             TextBoxNewSkillDescription.Visible = true;
             TextBoxNewSkillName.Visible = true;
             RadioButtonListRatingOptions.Visible = true;
+            ButtonCancel.Visible = true;
         }
 
         private void HideExtraCrap()
@@ -98,6 +107,7 @@ namespace WebApplication1.functionality
             LabelChooseSkillToRate.Visible = false;
             LabelSkillRating.Visible = false;
             ButtonDeleteSkill.Visible = false;
+            ButtonCancel.Visible = false;
 
             ButtonSkillRateFunTimes.Visible = true;
             GridView1.Visible = true;
@@ -109,6 +119,8 @@ namespace WebApplication1.functionality
             RadioButtonListRatingOptions.ClearSelection();
 
             GridView1.DataBind();
+
+            DropDownListEmployees_SelectedIndexChanged(null, null);
         }
 
         protected void RadioButtonListRatingOptions_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,9 +131,19 @@ namespace WebApplication1.functionality
                 {
                     SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
                     myConnection.Open();
-                    SqlCommand cmd = new SqlCommand("UPDATE Skills SET UserRating = @Rating WHERE SkillName = @Skillname AND Username = @Username", myConnection);
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = myConnection;
 
-                    cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                    if (DropDownListEmployees.SelectedValue == "Self")
+                    {
+                        cmd.CommandText = "UPDATE Skills SET UserRating = @Rating WHERE SkillName = @Skillname AND Username = @Username";
+                        cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                    }
+                    else
+                    {
+                        cmd.CommandText = "UPDATE Skills SET ManagerRating = @Rating WHERE SkillName = @Skillname AND Username = @Username";
+                        cmd.Parameters.AddWithValue("@Username", DropDownListEmployees.SelectedValue);
+                    }
                     cmd.Parameters.AddWithValue("@Skillname", DropDownListEditingSkillList.SelectedValue);
                     cmd.Parameters.AddWithValue("@Rating", Convert.ToInt32(RadioButtonListRatingOptions.SelectedValue));
 
@@ -145,9 +167,19 @@ namespace WebApplication1.functionality
                 {
                     SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
                     myConnection.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Skills (SkillName, SkillDescription, Username, UserRating) VALUES (@Skillname, @SkillDescription, @Username, @Rating)", myConnection);
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = myConnection;
 
-                    cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                    if (DropDownListEmployees.SelectedValue == "Self")
+                    {
+                        cmd.CommandText = "INSERT INTO Skills (SkillName, SkillDescription, Username, UserRating) VALUES (@Skillname, @SkillDescription, @Username, @Rating)";
+                        cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                    }
+                    else
+                    {
+                        cmd.CommandText = "INSERT INTO Skills (SkillName, SkillDescription, Username, ManagerRating) VALUES (@Skillname, @SkillDescription, @Username, @Rating)";
+                        cmd.Parameters.AddWithValue("@Username", DropDownListEmployees.SelectedValue);
+                    }  
                     cmd.Parameters.AddWithValue("@Skillname", TextBoxNewSkillName.Text);
                     cmd.Parameters.AddWithValue("@SkillDescription", TextBoxNewSkillDescription.Text);
                     cmd.Parameters.AddWithValue("@Rating", Convert.ToInt32(RadioButtonListRatingOptions.SelectedValue));
@@ -171,6 +203,7 @@ namespace WebApplication1.functionality
             ButtonSkillAddFunTimes.Visible = false;
             ButtonPickSkillDelete.Visible = false;
             GridView1.Visible = false;
+            ButtonCancel.Visible = true;
             LabelChooseSkillToRate.Visible = true;
             ButtonDeleteSkill.Visible = true;
 
@@ -178,14 +211,18 @@ namespace WebApplication1.functionality
             DropDownListEditingSkillList.Items.Clear();
             DropDownListEditingSkillList.ClearSelection();
 
-            LabelSkillRating.Text = "Choose Skill to Delete";
+            LabelChooseSkillToRate.Text = "Choose Skill to Delete";
 
             try
             {
                 SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
                 SqlCommand cmd = new SqlCommand("SELECT SkillName FROM Skills WHERE Username = @Username", myConnection);
+                cmd.Connection = myConnection;
 
-                cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                if (DropDownListEmployees.SelectedValue == "Self")
+                    cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                else
+                    cmd.Parameters.AddWithValue("@Username", DropDownListEmployees.SelectedValue);
 
                 myConnection.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -220,7 +257,10 @@ namespace WebApplication1.functionality
                 myConnection.Open();
                 SqlCommand cmd = new SqlCommand("DELETE FROM Skills WHERE SkillName = @Skillname AND Username = @Username", myConnection);
 
-                cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                if (DropDownListEmployees.SelectedValue == "Self")
+                    cmd.Parameters.AddWithValue("@Username", Session["Username"].ToString());
+                else
+                    cmd.Parameters.AddWithValue("@Username", DropDownListEmployees.SelectedValue);
                 cmd.Parameters.AddWithValue("@Skillname", DropDownListEditingSkillList.SelectedValue);
 
                 cmd.ExecuteNonQuery();
@@ -244,10 +284,14 @@ namespace WebApplication1.functionality
             }
             else
             {
-                String targetUser = DropDownListEmployees.SelectedValue;
-                SqlDataSource1.SelectCommand = "SELECT SkillName as [Skill Name], SkillDescription as [Skill Description], UserRating as [Personal Rating], ManagerRating as [Manager Rating] FROM Skills WHERE Username = '" + targetUser + "'";
+                SqlDataSource1.SelectCommand = "SELECT SkillName as [Skill Name], SkillDescription as [Skill Description], UserRating as [Personal Rating], ManagerRating as [Manager Rating] FROM Skills WHERE Username = '" + DropDownListEmployees.SelectedValue + "'";
                 GridView1.DataBind();
             }
+        }
+
+        protected void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            HideExtraCrap();
         }
     }
 }
