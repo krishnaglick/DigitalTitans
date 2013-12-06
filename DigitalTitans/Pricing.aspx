@@ -25,7 +25,23 @@
         <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink></li>
       </ul></div>
     
+                <br /><br /><p class="bold">Plans & Pricing</p>
 
+                        <p class="forward">
+                                <i>Initial Fee</i><br />
+                                    Base: $1,000<br />
+                                    This fee covers setup of our product for your system.<br />
+                                    *Additional customizations to workflows will increase the cost.<br /><br />
+                                <i>Yearly Subscription</i><br />
+                                    Base: $5,000<br />
+                                    Yearly cost will increase with company size. 
+                                Additional workflows will not affect this cost.<br />
+                                    *This is required to use our product.<br /><br />
+                                <i>Maintenance & Support</i><br />
+                                    Yearly Subscription will include two months of free support.<br />
+                                    Additional month's costs will vary based on workflow customizations and company size.<br />
+                                    *Businesses who have a subscription will receive higher ticket priority for requested changes or bugs.
+                        </p>
         </div>
                 
         <div id="footer">
