@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="./Core.css" />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title></title>
+    <title>Digital Titans - Plans and Pricing</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,9 +12,6 @@
 		<p id="name">Digital Titans- Human Resource Solutions</p>
 	</div>
         <div id="mainpage">
-    
-        
-            
             <div class="right">
                 <div class="top">
         <ul>

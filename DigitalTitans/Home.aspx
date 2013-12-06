@@ -26,12 +26,12 @@
       </ul><br />
             <table><tr></tr>
             <tr>
-                <th><img src="/office1.png" /><p>Are you tired of the clutter of yearly evaluations?</p></th>
-                <th><img src="/coyote.png" /><p style="text-align: center">Are you signing for help?</p></th>
+                <th class="pic"><img src="/office1.png" /><p>Are you tired of the clutter of yearly evaluations?</p></th>
+                <th class="pic"><img src="/coyote.png" /><p style="text-align: center">Are you signing for help?</p></th>
             </tr>
                 <tr>
-                <th><img src="/logo.png" /><p>After using our product....</p></th>
-                <th><img src="/office4.jpg" /><p>You will never think of yearly evaluations the same!</p></th>
+                <th class="pic"><img src="/logo.png" /><p>After using our product....</p></th>
+                <th class="pic"><img src="/office4.jpg" /><p>You will never think of yearly evaluations the same!</p></th>
             </tr>
                 </table>
        </div>

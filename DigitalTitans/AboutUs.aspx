@@ -27,7 +27,7 @@
       </ul></div><br /> 
 
                 <p class="bold">Scot A. Hancock:</p>
-<p>test</p>
+<p>Scot is 47 years old and, after a short career in the United States marine Corps, has enjoyed a 25+ year career in telecommunications. With the merging of the telecommunication and IT fields with Technologies like VOIP and Video-Conferencing, he decided to &quot;re-train and add to his arsenal of knowledge. He is looking forward to working in the Information Systems field helping move our world forward through the design and implementation of more efficient and automated systems. </p>
                 <p class="bold">Robert K. Lowstetter:</p>
 <p>On April 10, 1991, like many people, Robert was born. He has hobbies of going to the gym, swimming, and helping people in the School of Computing Lab. As you might assume, Robert loves working with computers. He has worked with computers since he was 15 years old. Robert Lowstetter is a Software Support Engineer for RF-Smart. He is graduating with a degree in Computing and Information Sciences.</p>
       <p class="bold">Robert Goodman:</p>
@@ -41,6 +41,6 @@
         <div id="footer">
         Copyright 2013 Digital Titans.UNF
             </div></div>
-    </form>
+        </form>
 </body>
 </html>

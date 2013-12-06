@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="./Core.css" />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title></title>
+    <title>Digital Titans - Why Digital Titans?</title>
 </head>
 <body>
     <form id="form1" runat="server">

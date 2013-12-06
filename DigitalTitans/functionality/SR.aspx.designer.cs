@@ -13,6 +13,15 @@ namespace WebApplication1.functionality {
     public partial class SR {
         
         /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -49,15 +58,6 @@ namespace WebApplication1.functionality {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
         
         /// <summary>
-        /// DropDownListEmployees control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEmployees;
-        
-        /// <summary>
         /// SqlDataSourceEmployees control.
         /// </summary>
         /// <remarks>
@@ -65,6 +65,15 @@ namespace WebApplication1.functionality {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceEmployees;
+        
+        /// <summary>
+        /// DropDownListEmployees control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListEmployees;
         
         /// <summary>
         /// GridView1 control.
