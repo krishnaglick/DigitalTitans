@@ -4,12 +4,12 @@
 <link rel="stylesheet" type="text/css" href="./Core.css" />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title></title>
+    <title>Digital Titans - Human Resource Solutions</title>
 </head>
 <body>
     <form id="form1" runat="server">
      <div id="header">
-		<p id="name">Digital Titans- Human Resource Solutions</p>
+		<img src="/logo.png" style="width:60px; height:60px" /><p id="name">Digital Titans- Human Resource Solutions</p>
 	</div>
         <div id="mainpage">
     
@@ -20,10 +20,21 @@
         <ul>
         <li><asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Why.aspx">Why Digital Titans?</asp:HyperLink></li>
-        <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Pricing.aspx">Pricing</asp:HyperLink></li>
+        <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Pricing.aspx">Products & Pricing</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink></li>
-      </ul></div>
+      </ul><br />
+            <table><tr></tr>
+            <tr>
+                <th><img src="/office1.png" /><p>Are you tired of the clutter of yearly evaluations?</p></th>
+                <th><img src="/coyote.png" /><p style="text-align: center">Are you signing for help?</p></th>
+            </tr>
+                <tr>
+                <th><img src="/logo.png" /><p>After using our product....</p></th>
+                <th><img src="/office4.jpg" /><p>You will never think of yearly evaluations the same!</p></th>
+            </tr>
+                </table>
+       </div>
     
 
         </div>

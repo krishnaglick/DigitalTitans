@@ -25,12 +25,21 @@
         <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink></li>
       </ul></div><br /> 
-        <p class="logo">Digital Titans</p></div>
+
+                <p class="bold">Scot A. Hancock:</p>
+<p>test</p>
+                <p class="bold">Robert K. Lowstetter:</p>
+<p>In April 10, 1991, like many people, Robert was born. He has hobbies of going to the gym, swimming, and helping people in the School of Computing Lab. As you might assume, Robert loves working with computers. He has worked with computers since he was 15 years old. Robert Lowstetter is a Software Support Engineer for RF-Smart. He is graduating with a degree in Computing and Information Sciences.</p>
+      <p class="bold">Robert Goodman:</p>
+<p>Ideally wants to obtain an IT Quality Analyst position with interest in system testing.   Has the ability to create test base using detail test requirements.  This has done several types of testing that include the following: System Testing, End-to-End Testing, Regression Testing, and Acceptance Testing.  Additionally, has developed spreadsheets using Six Sigma processes to monitor operational production. Furthermore, he has developed a priority queue for operations that increased production by 300% over the previous FIFO method that was used.</p>
+<p class="bold">Krishna C. Glick:</p>
+<p>test</p>
+</div>
     
 
         
         <div id="footer">
-        <a href="Default.aspx" id="email">Home</a>
+        Copyright 2013 Digital Titans.UNF
             </div></div>
     </form>
 </body>

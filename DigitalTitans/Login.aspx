@@ -24,8 +24,8 @@
         <li><asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Pricing.aspx">Pricing</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink></li>
         <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Login.aspx">Log In</asp:HyperLink></li>
-      </ul></div>
-        <p class="logo">Digital Titans</p>
+      </ul></div><br /><br />
+        <br />
         
             <asp:Label ID="LabelUsername" runat="server" Text="Username:  "></asp:Label>
             <asp:TextBox ID="TextBoxUsername" runat="server"></asp:TextBox><br /><br />
