@@ -67,5 +67,10 @@ namespace WebApplication1
         {
             Response.Redirect("~/Register.aspx");
         }
+
+        protected void ButtonForgotPassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ForgotPassword.aspx");
+        }
     }
 }

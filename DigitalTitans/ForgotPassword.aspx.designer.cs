@@ -10,7 +10,7 @@
 namespace WebApplication1 {
     
     
-    public partial class WebForm2 {
+    public partial class ForgotPassword {
         
         /// <summary>
         /// Head1 control.
@@ -22,13 +22,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// form1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
         /// HyperLink6 control.
@@ -76,66 +76,66 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink10;
         
         /// <summary>
-        /// LabelUsername control.
+        /// LabelAsk control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUsername;
+        protected global::System.Web.UI.WebControls.Label LabelAsk;
         
         /// <summary>
-        /// TextBoxUsername control.
+        /// TextBoxInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxUsername;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxInput;
         
         /// <summary>
-        /// LabelPassword control.
+        /// ButtonGo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPassword;
+        protected global::System.Web.UI.WebControls.Button ButtonGo;
         
         /// <summary>
-        /// TextBoxPassword control.
+        /// LabelSQ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        protected global::System.Web.UI.WebControls.Label LabelSQ;
         
         /// <summary>
-        /// ButtonLogin control.
+        /// LabelSA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonLogin;
+        protected global::System.Web.UI.WebControls.Label LabelSA;
         
         /// <summary>
-        /// ButtonRegister control.
+        /// TextBoxSA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonRegister;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSA;
         
         /// <summary>
-        /// ButtonForgotPassword control.
+        /// ButtonSendEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonForgotPassword;
+        protected global::System.Web.UI.WebControls.Button ButtonSendEmail;
     }
 }
