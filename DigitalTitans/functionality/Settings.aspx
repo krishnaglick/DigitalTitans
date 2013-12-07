@@ -4,17 +4,19 @@
 <link rel="stylesheet" type="text/css" href="../Core.css" />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Digital Titans - Settings</title>
 </head>
 <body>
     <form runat="server">
     <div class="top">
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="./SR.aspx">Skills & Ratings</asp:HyperLink>
         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="./Settings.aspx">Settings</asp:HyperLink>
-        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="./Logout.aspx">Log Out</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="./Analyze.aspx">Analyze Data</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="./Logout.aspx">Log Out</asp:HyperLink>
     
         <p class="logo">Digital Titans</p>
     </div>
+
         <center>
         <asp:Button ID="ButtonChangePassword" runat="server" Text="Change Password" OnClick="ButtonChangePassword_Click" /><asp:Button ID="ButtonChangeEmail" runat="server" Text="Change Email" OnClick="ButtonChangeEmail_Click" /><asp:Button ID="ButtonChangeQA" runat="server" Text="Change Security Q&A" OnClick="ButtonChangeQA_Click" />
             <br />

@@ -11,15 +11,18 @@
     <div class="top">
         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="./SR.aspx">Skills & Ratings</asp:HyperLink>
         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="./Settings.aspx">Settings</asp:HyperLink>
-        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="./Logout.aspx">Log Out</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="./Analyze.aspx">Analyze Data</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="./Logout.aspx">Log Out</asp:HyperLink>
+    
+        <p class="logo">Digital Titans</p>
     </div>
+
         <asp:SqlDataSource ID="SqlDataSourceEmployees" runat="server" ConnectionString="<%$ ConnectionStrings:DigitalTitansConnectionString %>" SelectCommand="SELECT [Username] FROM [Users] WHERE ([Manager] = @Manager)">
             <SelectParameters>
                 <asp:SessionParameter Name="Manager" SessionField="Username" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
         <center>
-            <p class="logo">Digital Titans</p>
             <asp:DropDownList ID="DropDownListEmployees" runat="server" AutoPostBack="True" DataSourceID="SqlDataSourceEmployees" DataTextField="Username" DataValueField="Username" AppendDataBoundItems="true" OnSelectedIndexChanged="DropDownListEmployees_SelectedIndexChanged">
             </asp:DropDownList>
             <asp:GridView ID="GridView1" runat="server" AllowPaging="True" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="None" ForeColor="#333333">

@@ -192,4 +192,19 @@ div.top {
 }
 .center {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
+    .center table {
+        padding: 0px;
+        border: 0px;
+        vertical-align: bottom;
+        border-collapse: collapse;
+    }
+    .center th, td, tr {
+        padding: 5px;
+        border: 1px solid black;
+        vertical-align:bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+    }

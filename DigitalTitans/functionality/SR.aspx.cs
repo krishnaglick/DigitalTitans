@@ -36,6 +36,8 @@ namespace WebApplication1.functionality
             ButtonPickSkillDelete.Visible = false;
             ButtonSkillAddFunTimes.Visible = false;
             GridView1.Visible = false;
+            DropDownListEmployees.Visible = false;
+
             LabelChooseSkillToRate.Visible = true;
             RadioButtonListRatingOptions.Visible = true;
             LabelSkillRating.Visible = true;
@@ -84,6 +86,8 @@ namespace WebApplication1.functionality
             ButtonPickSkillDelete.Visible = false;
             ButtonSkillAddFunTimes.Visible = false;
             GridView1.Visible = false;
+            DropDownListEmployees.Visible = false;
+
             LabelNewSkillDescription.Visible = true;
             LabelNewSkillName.Visible = true;
             LabelSkillRating.Visible = true;
@@ -113,6 +117,7 @@ namespace WebApplication1.functionality
             GridView1.Visible = true;
             ButtonSkillAddFunTimes.Visible = true;
             ButtonPickSkillDelete.Visible = true;
+            DropDownListEmployees.Visible = true;
 
             TextBoxNewSkillDescription.Text = "";
             TextBoxNewSkillName.Text = "";
@@ -206,6 +211,7 @@ namespace WebApplication1.functionality
             ButtonCancel.Visible = true;
             LabelChooseSkillToRate.Visible = true;
             ButtonDeleteSkill.Visible = true;
+            DropDownListEmployees.Visible = false;
 
             DropDownListEditingSkillList.Visible = true;
             DropDownListEditingSkillList.Items.Clear();

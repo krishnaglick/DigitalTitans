@@ -10,16 +10,16 @@
 namespace WebApplication1.functionality {
     
     
-    public partial class SR {
+    public partial class Analyze {
         
         /// <summary>
-        /// Head1 control.
+        /// Head2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head2;
         
         /// <summary>
         /// form1 control.
@@ -67,156 +67,102 @@ namespace WebApplication1.functionality {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
         
         /// <summary>
-        /// SqlDataSourceEmployees control.
+        /// SqlDataSourceAllSkills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceEmployees;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAllSkills;
         
         /// <summary>
-        /// DropDownListEmployees control.
+        /// LabelChooseSkill control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEmployees;
+        protected global::System.Web.UI.WebControls.Label LabelChooseSkill;
         
         /// <summary>
-        /// GridView1 control.
+        /// LabelChooseRating control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label LabelChooseRating;
         
         /// <summary>
-        /// ButtonSkillAddFunTimes control.
+        /// LabelOperator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSkillAddFunTimes;
+        protected global::System.Web.UI.WebControls.Label LabelOperator;
         
         /// <summary>
-        /// ButtonSkillRateFunTimes control.
+        /// DropDownListAllSkills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSkillRateFunTimes;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListAllSkills;
         
         /// <summary>
-        /// ButtonPickSkillDelete control.
+        /// RadioButtonListChooseRating control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonPickSkillDelete;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListChooseRating;
         
         /// <summary>
-        /// LabelNewSkillName control.
+        /// DropDownListOperators control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNewSkillName;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListOperators;
         
         /// <summary>
-        /// TextBoxNewSkillName control.
+        /// ButtonSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNewSkillName;
+        protected global::System.Web.UI.WebControls.Button ButtonSearch;
         
         /// <summary>
-        /// LabelNewSkillDescription control.
+        /// ButtonReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNewSkillDescription;
+        protected global::System.Web.UI.WebControls.Button ButtonReset;
         
         /// <summary>
-        /// TextBoxNewSkillDescription control.
+        /// LabelNothingHere control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxNewSkillDescription;
+        protected global::System.Web.UI.WebControls.Label LabelNothingHere;
         
         /// <summary>
-        /// LabelChooseSkillToRate control.
+        /// GridViewMatchingUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelChooseSkillToRate;
-        
-        /// <summary>
-        /// DropDownListEditingSkillList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEditingSkillList;
-        
-        /// <summary>
-        /// LabelSkillRating control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSkillRating;
-        
-        /// <summary>
-        /// RadioButtonListRatingOptions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListRatingOptions;
-        
-        /// <summary>
-        /// ButtonDeleteSkill control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonDeleteSkill;
-        
-        /// <summary>
-        /// ButtonCancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCancel;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.GridView GridViewMatchingUsers;
     }
 }

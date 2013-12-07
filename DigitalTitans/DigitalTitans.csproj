@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Core.css" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="functionality\Analyze.aspx" />
     <Content Include="functionality\Logout.aspx" />
     <Content Include="functionality\Settings.aspx" />
     <Content Include="functionality\SR.aspx" />
@@ -79,6 +80,13 @@
     </Compile>
     <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="functionality\Analyze.aspx.cs">
+      <DependentUpon>Analyze.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="functionality\Analyze.aspx.designer.cs">
+      <DependentUpon>Analyze.aspx</DependentUpon>
     </Compile>
     <Compile Include="functionality\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
