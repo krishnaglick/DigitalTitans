@@ -24,7 +24,7 @@ namespace WebApplication1.functionality
         {
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 if (mgr.Text != "")
                 {
                     try

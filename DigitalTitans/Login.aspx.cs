@@ -36,7 +36,7 @@ namespace WebApplication1
 
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Username = @Username AND Password = @Password", myConnection);
 
                 cmd.Parameters.AddWithValue("@Username", TextBoxUsername.Text);

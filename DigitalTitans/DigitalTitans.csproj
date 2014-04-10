@@ -109,6 +109,7 @@
     <Compile Include="functionality\SR.aspx.designer.cs">
       <DependentUpon>SR.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Globals.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

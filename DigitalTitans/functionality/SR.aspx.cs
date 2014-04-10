@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using WebApplication1;
 
 namespace WebApplication1.functionality
 {
@@ -51,7 +52,7 @@ namespace WebApplication1.functionality
 
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 SqlCommand cmd = new SqlCommand("SELECT SkillName FROM Skills WHERE Username = @Username", myConnection);
 
                 if(DropDownListEmployees.SelectedValue == "Self")
@@ -134,7 +135,8 @@ namespace WebApplication1.functionality
             {
                 try
                 {
-                    SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                    //SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);false
+                    SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                     myConnection.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = myConnection;
@@ -170,7 +172,7 @@ namespace WebApplication1.functionality
                 }
                 try
                 {
-                    SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                    SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                     myConnection.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = myConnection;
@@ -221,7 +223,7 @@ namespace WebApplication1.functionality
 
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 SqlCommand cmd = new SqlCommand("SELECT SkillName FROM Skills WHERE Username = @Username", myConnection);
                 cmd.Connection = myConnection;
 
@@ -259,7 +261,7 @@ namespace WebApplication1.functionality
         {
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 myConnection.Open();
                 SqlCommand cmd = new SqlCommand("DELETE FROM Skills WHERE SkillName = @Skillname AND Username = @Username", myConnection);
 

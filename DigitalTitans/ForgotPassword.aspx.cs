@@ -26,7 +26,7 @@ namespace WebApplication1
                 Response.Write("<script>alert('Please enter an email.');</script>");
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 SqlCommand cmd = new SqlCommand("SELECT SecurityQuestion FROM Users WHERE Email = @Email", myConnection);
 
                 cmd.Parameters.AddWithValue("@Email", TextBoxInput.Text);
@@ -84,7 +84,7 @@ namespace WebApplication1
             bool CanDo = false;
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 SqlCommand cmd = new SqlCommand("SELECT SecurityAnswer, Username FROM Users WHERE Email = @Email", myConnection);
 
                 cmd.Parameters.AddWithValue("@Email", TextBoxInput.Text);
@@ -119,7 +119,7 @@ namespace WebApplication1
             {
                 try
                 {
-                    SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                    SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                     SqlCommand updatePassword = new SqlCommand("UPDATE Users SET Password = @Password WHERE Email = @Email", myConnection);
 
                     myConnection.Open();

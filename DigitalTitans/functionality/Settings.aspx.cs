@@ -66,7 +66,7 @@ namespace WebApplication1.functionality
 
         protected void ButtonAccept_Click(object sender, EventArgs e)
         {
-            SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+            SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
             if (LabelData2.Text == "Enter New Password")
             {
                 if (TextBoxData1.Text == Session["Password"].ToString())

@@ -34,7 +34,7 @@ namespace WebApplication1.functionality
             GridViewMatchingUsers.DataBind();
             try
             {
-                SqlConnection myConnection = new SqlConnection("Data Source=lyra2.unfcsd.unf.edu;Initial Catalog=DigitalTitans;Persist Security Info=True;User ID=DigitalTitans;Password=xahhxqlwyGp09zI");
+                SqlConnection myConnection = new SqlConnection(Globals.ConnectionString);
                 String Op = DropDownListOperators.SelectedValue;
                 SqlCommand cmd = new SqlCommand("SELECT Username, UserRating as [Employee Rating], ManagerRating as [Manager Rating] FROM Skills WHERE SkillName = @Skill AND (UserRating " + Op + " @Rating OR ManagerRating " + Op + " @Rating)", myConnection);
                 cmd.Parameters.AddWithValue("@Skill", DropDownListAllSkills.SelectedValue);
